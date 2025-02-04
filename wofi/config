@@ -1,0 +1,8 @@
+show=drun
+allow_images=true
+gtk-dark=true
+insensitive=true
+prompt=Applications:
+term=alacritty  # Change to your terminal (e.g., alacritty, kitty)
+
+
