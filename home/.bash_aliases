@@ -2,6 +2,7 @@
 
 ## ls stuff
 #alias lsx='exa -la --icons -h'
+#alias lsx='eza -la --icons -h'
 alias ls='exa -la --icons -h --group-directories-first'
 alias lxs='exa --icons'
 alias lxd='exa -a --icons --group-directories-first'
@@ -10,7 +11,9 @@ alias lxd='exa -a --icons --group-directories-first'
 alias nlu='nala list --upgradable'
 
 ## clipboard thingy
-alias xcp='xclip -sel c'
+# alias xcp='xclip -sel c'
+## clipboard thingy (Wayland version)
+alias xcp='wl-copy'
 
 ## cd's
 alias ..='cd ..'
@@ -38,7 +41,7 @@ alias jpn='jupyter notebook --no-browser'
 alias jpl='jupyter lab --no-browser'
 
 ## Cursor from the command line
-alias cursor='/opt/cursor.appimage'
+## alias cursor='/opt/cursor.appimage'
 
 #>>>> OS >>>>
 ## Windows C Drive
