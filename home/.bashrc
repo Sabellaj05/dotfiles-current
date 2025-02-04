@@ -2,10 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# Add this directory to execute scripts withouth path
-
-PATH="$HOME/.local/bin:$PATH"
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -105,7 +101,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -121,88 +116,82 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# >>> Yazi file manager >>>
 
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-# >>> Yazi file manager >>>
-
-# >>> Obsidian >>>
-# Functions to open specfic vaults in obsidian
-# 2 so far
-
-obsidian_open_it() {
-	local vault_path="IT"
-	#xdg-open "obsidian://open?vault=$vault_name"
-    nohup obsidian "obsidian://open?vault=$vault_name" >/dev/null 2>&1 &
-    disown
-    exit ## Para cerrar la terminal de toque
-}
-
-obsidian_open_cloud() {
-	local vault_name="Cloud"
-	#xdg-open "obsidian://open?vault=$vault_name"
-    nohup obsidian "obsidian://open?vault=$vault_name" >/dev/null 2>&1 &
-    disown
-    exit
-
-}
-
-# Aliases to open them
-
-alias ob-it='obsidian_open_it'
-alias ob-cloud='obsidian_open_cloud'
-# >>> Obsidian >>>
-
-# >>> Zathura >>>
-zathura_open() {
-  zathura "$1" >/dev/null 2>&1 &
-  disown    
-}
-
-alias ztr='zathura_open'
-
-# >>> Zathura >>>
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+. "$HOME/.cargo/env"
+source /home/don/software/alacritty/extra/completions/alacritty.bash
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/don/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/don/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/don/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/don/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/don/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/don/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/don/anaconda3/bin:$PATH"
+        export PATH="/home/don/miniconda3/bin:$PATH"
     fi
 fi
-unset __conda_setup
 
-conda deactivate
+
+# >>> Yazi file manager >>>
+
+#function yy() {
+#	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+#	yazi "$@" --cwd-file="$tmp"
+#	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+#		cd -- "$cwd"
+#	fi
+#	rm -f -- "$tmp"
+#}
+
+# >>> Yazi file manager >>>
+
+# >>> obsidian >>>
+#obsidian_open_it() {
+#	local vault_path="IT"
+#	#xdg-open "obsidian://open?vault=$vault_name"
+#    nohup obsidian "obsidian://open?vault=$vault_name" >/dev/null 2>&1 &
+#    disown
+#    exit ## Para cerrar la terminal de toque
+#}
+#
+#obsidian_open_cloud() {
+#	local vault_name="Cloud"
+#	#xdg-open "obsidian://open?vault=$vault_name"
+#    nohup obsidian "obsidian://open?vault=$vault_name" >/dev/null 2>&1 &
+#    disown
+#    exit
+#
+#}
+
+# Aliases to open
+
+# alias ob-it='obsidian_open_it'
+# alias ob-cloud='obsidian_open_cloud'
+
+
+# >>> obsidian >>>
+
+# >>> Zathura >>>
+#
+# 
+# zathurar_open() {
+#   zathura "$1" >/dev/null 2>&1 &
+#   disown
+# }
+#
+# alias ztr='zathura_open'
+
+
+unset __conda_setup
 # <<< conda initialize <<<
 
-# <<< starship <<<
-
 eval "$(starship init bash)"
-# <<< starship <<<
-
-
-# <<< pyenv <<<
-export PYENV_ROOT="$HOME/.pyenv"
-
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-
-eval "$(pyenv init -)"
-# <<< pyenv <<<
-
-#ROCML_HOME=/opt/rocm-6.0.2
-HIP_PLATFORM=amd
-
-. "$HOME/.cargo/env"
+export PATH=$HOME/local/nvim/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export VIMRUNTIME=$HOME/local/nvim/share/nvim/runtime
