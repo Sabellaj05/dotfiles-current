@@ -7,6 +7,7 @@ require('mason-lspconfig').setup({
   'yamlls',
   'dockerls',
   'rust_analyzer',
+  'ols',
 }
 
 })
@@ -80,6 +81,11 @@ require("lspconfig").dockerls.setup {
 }
 
 require("lspconfig").rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+require("lspconfig").ols.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
