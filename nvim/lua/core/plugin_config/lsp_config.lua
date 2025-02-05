@@ -1,14 +1,15 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls',
-  'bashls',
-  'clangd',
-  'pyright',
-  'yamlls',
-  'dockerls',
-  'rust_analyzer',
-  'ols',
-}
+  ensure_installed = {
+    'lua_ls',
+    'bashls',
+    'clangd',
+    'pyright',
+    'yamlls',
+    'dockerls',
+    'rust_analyzer',
+    'ols',
+  }
 
 })
 

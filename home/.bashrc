@@ -195,4 +195,5 @@ export PATH=$HOME/local/nvim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export VIMRUNTIME=$HOME/local/nvim/share/nvim/runtime
-export PATH="$HOME/Documents/odin-stuff/Odin:$PATH"
+## export PATH="$HOME/Documents/odin-stuff/Odin:$PATH"
+export PATH=$HOME/.odin/Odin/:$PATH
