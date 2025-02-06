@@ -12,7 +12,7 @@ local options = {
   -- Install parsers synchronously (only apllied to 'ensure installed')
   sync_install = false,
   auto_install = true,
-  highligh = {
+  highlight = {
       enable = true,
   },
 }

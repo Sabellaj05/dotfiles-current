@@ -19,6 +19,13 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>ft', ':FloatermNew<CR>')
 vim.keymap.set('n', '<leader>ftr', ':FloatermNew --position=right<CR>')
 
+-- tabs
+vim.keymap.set('n', '<leader>t', ':tabnew<CR>')
+vim.keymap.set('n', '<leader>ct', ':tabclose<CR>')
+vim.keymap.set('n', '<leader>o', ':tabnext<CR>')
+vim.keymap.set('n', '<leader>i', ':tabprevious<CR>')
+
+
 
 
 
