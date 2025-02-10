@@ -33,7 +33,10 @@
 # # a comment after a config option, since it would be interpreted as a
 # # part of the value. For example, this will have a value of "#123abc":
 # background = #123abc
-background = #1E1E2E
+# background = #3F1E25
+
+# background = #1E1E2E    ## default
+# background = #3F1E25
 #
 # # Empty values are used to reset config keys to default.
 # key =
