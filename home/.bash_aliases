@@ -27,7 +27,7 @@ alias unlu='cd ~/Documents/repos-github/UNLu'
 alias qtile-reload='qtile cmd-obj -o cmd -f reload_config'
 
 ## fulL HACKER
-alias neo='cmatrix -C blue'
+alias neo='cmatrix -b -C blue'
 
 ## git
 alias gst='git status'
