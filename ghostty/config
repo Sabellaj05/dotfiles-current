@@ -34,8 +34,9 @@
 # # part of the value. For example, this will have a value of "#123abc":
 # background = #123abc
 # background = #3F1E25
+# background = #282c34
 
-# background = #1E1E2E    ## default
+background = #1E1E2E    
 # background = #3F1E25
 #
 # # Empty values are used to reset config keys to default.
@@ -45,3 +46,11 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+
+# fullscreen = true
+font-size = 11
+cursor-style-blink = true
+background-opacity = 0.82
+gtk-titlebar = false
+window-padding-x = 12
+# window-decoration = false
