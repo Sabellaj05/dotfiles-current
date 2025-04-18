@@ -32,6 +32,7 @@ alias neo='cmatrix -b -C blue'
 ## git
 alias gst='git status'
 alias glo='git log --oneline'
+alias glg='git log --all --graph'
 
 ## neovim
 alias vim='nvim'
