@@ -197,5 +197,8 @@ export PATH=$HOME/.local/bin:$PATH
 export VIMRUNTIME=$HOME/local/nvim/share/nvim/runtime
 ## export PATH="$HOME/Documents/odin-stuff/Odin:$PATH"
 export PATH=$HOME/.odin/Odin/:$PATH
-
+export PATH=$HOME/software/nodejs/bin:$PATH
+export PATH=$HOME/software/focus/:$PATH
 complete -C /usr/bin/terraform terraform
+eval "$(uv generate-shell-completion bash)"
+eval "$(uvx --generate-shell-completion bash)"

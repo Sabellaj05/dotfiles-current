@@ -42,7 +42,7 @@ alias jpn='jupyter notebook --no-browser'
 alias jpl='jupyter lab --no-browser'
 
 ## Cursor from the command line
-## alias cursor='/opt/cursor.appimage'
+alias cursor='/usr/local/bin/cursor --no-sandbox'
 
 #>>>> OS >>>>
 ## Windows C Drive
