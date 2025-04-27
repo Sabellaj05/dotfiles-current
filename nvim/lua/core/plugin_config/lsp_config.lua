@@ -9,6 +9,7 @@ require('mason-lspconfig').setup({
     'dockerls',
     'rust_analyzer',
     'ols',
+    'terraformls',
   }
 
 })
@@ -87,6 +88,10 @@ require("lspconfig").rust_analyzer.setup {
 }
 
 require("lspconfig").ols.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+require("lspconfig").terraformls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
