@@ -1,19 +1,22 @@
 local options = {
   -- A list of parser names, or "all"
   ensure_installed = {"c",
+                      "bash",
                       "lua",
-                      "odin",
+                      "markdown",},
                       "rust",
+                      "odin",
                       "python",
                       "vim",
-                      "bash",
-                      "markdown",},
 
   -- Install parsers synchronously (only apllied to 'ensure installed')
   sync_install = false,
   auto_install = true,
   highlight = {
       enable = true,
+      additional_vim_regex_highlighting = false,
   },
+  indent = { enable = true },
+
 }
-require('nvim-treesitter.configs').setup{options}
+require('nvim-treesitter.configs').setup(options)

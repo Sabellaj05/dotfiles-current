@@ -24,6 +24,30 @@ require("catppuccin").setup({
     },
        -- more parametros
        -- color overrides
+    color_overrides = {
+        mocha = {
+          base = "#1e1e2e",
+          mantle = "#181825",
+          crust = "#11111b",
+          text = '#94e2d5',    -- play with it
+          red = "#8839ef",
+          red = "#f38ba8",
+          red = "#f07c82",
+          blue = "#04a5e5",
+          blue = "#89b4fa",
+          blue = "#70a1ff",
+          green = "#a6e3a1",
+          green = "#7bed9f",
+          yellow = "#8839ef", -- {}
+          yellow = "#d20f39", -- {}
+          yellow = "#ffeaa7",
+          sky = "#5ef1ff",
+          flamingo = '#e64553', --require
+          pink = "#ffacfc",
+          --peach = "#e64553",
+          peach = "#ffbe76",
+      },
+    },
     custom_highlights = {},
     integrations = {
         cmp = true,
