@@ -1,13 +1,16 @@
 
 -- TODO: Arreglar los colores a unos mas decentes
 
+-- ghostty color
+-- # background = #282c34 
+
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
         dark = "mocha",
     },
-    transparent_background = false, -- disables setting the background color.
+    transparent_background = true, -- disables setting the background color.
     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
     term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
     dim_inactive = {
@@ -29,7 +32,7 @@ require("catppuccin").setup({
           base = "#1e1e2e",
           mantle = "#181825",
           crust = "#11111b",
-          text = '#94e2d5',    -- play with it
+          text = "#94e2d5",    -- play with it
           red = "#8839ef",
           red = "#f38ba8",
           red = "#f07c82",
@@ -42,7 +45,7 @@ require("catppuccin").setup({
           yellow = "#d20f39", -- {}
           yellow = "#ffeaa7",
           sky = "#5ef1ff",
-          flamingo = '#e64553', --require
+          flamingo = "#e64553", --require
           pink = "#ffacfc",
           --peach = "#e64553",
           peach = "#ffbe76",
@@ -53,7 +56,7 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-      --  lualine = true,   
+        -- lualine = true,   
         treesitter = true,
         notify = false,
         mini = {
