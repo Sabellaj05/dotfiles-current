@@ -29,20 +29,23 @@ require("catppuccin").setup({
        -- color overrides
     color_overrides = {
         mocha = {
-          base = "#1e1e2e",
+          -- base = "#1e1e2e",                   base = cursor-line
+          base = "#282c34",
+          -- base = "#ffbe76",
           mantle = "#181825",
           crust = "#11111b",
+          -- curst = "#ffbe76",
           text = "#94e2d5",    -- play with it
-          red = "#8839ef",
-          red = "#f38ba8",
+          -- red = "#8839ef",
+          -- red = "#f38ba8",
           red = "#f07c82",
-          blue = "#04a5e5",
-          blue = "#89b4fa",
+          -- blue = "#04a5e5",
+          -- blue = "#89b4fa",
           blue = "#70a1ff",
           green = "#a6e3a1",
-          green = "#7bed9f",
-          yellow = "#8839ef", -- {}
-          yellow = "#d20f39", -- {}
+          -- green = "#7bed9f",
+          -- yellow = "#8839ef", -- {}
+          -- yellow = "#d20f39", -- {}
           yellow = "#ffeaa7",
           sky = "#5ef1ff",
           flamingo = "#e64553", --require
@@ -75,10 +78,10 @@ vim.cmd.colorscheme "catppuccin"
 --		  mantle = "#181825",
 --		  crust = "#11111b",
 --          text = '#94e2d5',    -- play with it
---         red = "#8839ef",
---         red = "#f38ba8",
+--          red = "#8839ef",
+--          red = "#f38ba8",
 --          red = "#f07c82",
---       blue = "#04a5e5",
+--          blue = "#04a5e5",
 --          blue = "#89b4fa",
 --          blue = "#70a1ff",
 --          green = "#a6e3a1",
@@ -91,7 +94,7 @@ vim.cmd.colorscheme "catppuccin"
 --          flamingo = '#e64553', --require
 --          pink = "#ffacfc",
 --
---          --peach = "#e64553",
+--          peach = "#e64553",
 --          peach = "#ffbe76",
 --      } 
 
