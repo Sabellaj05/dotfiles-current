@@ -19,6 +19,7 @@ alias xcp='wl-copy'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias unlu='cd ~/Documents/repos-github/UNLu'
+alias hub='cd ~/Documents/repos-github/projects'
 
 #>>>> Software >>>>
 
