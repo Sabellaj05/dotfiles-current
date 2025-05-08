@@ -48,8 +48,12 @@ background = #1E1E2E
 # resize-overlay-duration = 4s 200ms
 
 # fullscreen = true
-font-size = 11
-cursor-style-blink = true
+# nice one
+# font-family = "Roboto Mono Nerd Font"
+font-family = "CodeNewRoman Nerd Font"
+# font-family = "Product Sans Bold" {} [] "" '' () * - = -> ==
+font-size = 14
+cursor-style-blink = true 
 background-opacity = 0.82
 gtk-titlebar = false
 window-padding-x = 12
