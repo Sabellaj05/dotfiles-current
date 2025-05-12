@@ -23,6 +23,10 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'voldikss/vim-floaterm'
   use {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+  }
+  use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',

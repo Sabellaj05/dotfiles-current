@@ -35,8 +35,13 @@
 # background = #123abc
 # background = #3F1E25
 # background = #282c34
+# rose-pine background color
+background = #191724
 
-background = #1E1E2E    
+# catpuccin background color
+# background = #1E1E2E    
+
+# default
 # background = #3F1E25
 #
 # # Empty values are used to reset config keys to default.

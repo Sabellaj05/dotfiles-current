@@ -1,8 +1,9 @@
 show=drun
+location=center
 allow_images=true
 gtk-dark=true
 insensitive=true
 prompt=Applications:
-term=alacritty  # Change to your terminal (e.g., alacritty, kitty)
+term=ghostty  # Change to your terminal (e.g., alacritty, kitty)
 
 
