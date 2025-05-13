@@ -4,6 +4,7 @@ require('mason-lspconfig').setup({
     'lua_ls',
     'bashls',
     'clangd',
+    'gopls',
     'pyright',
     'yamlls',
     'dockerls',
@@ -92,6 +93,10 @@ require("lspconfig").ols.setup {
   on_attach = on_attach
 }
 require("lspconfig").terraformls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+require("lspconfig").gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }

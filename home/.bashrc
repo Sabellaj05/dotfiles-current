@@ -190,15 +190,23 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-eval "$(starship init bash)"
 export PATH=$HOME/local/nvim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
 export VIMRUNTIME=$HOME/local/nvim/share/nvim/runtime
+
 ## export PATH="$HOME/Documents/odin-stuff/Odin:$PATH"
+
+# odin lang
 export PATH=$HOME/.odin/Odin/:$PATH
+# nodejs
 export PATH=$HOME/software/nodejs/bin:$PATH
+# focus IDE
 export PATH=$HOME/software/focus/:$PATH
+
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+
 complete -C /usr/bin/terraform terraform
+eval "$(starship init bash)"
 eval "$(uv generate-shell-completion bash)"
 eval "$(uvx --generate-shell-completion bash)"
