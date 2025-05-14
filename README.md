@@ -12,6 +12,6 @@
 
 ---
 
-![Image](assets/desktop-02.png)
+![Image](assets/desktop-current.png)
 
 ## To do
