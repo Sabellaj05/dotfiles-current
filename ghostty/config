@@ -59,7 +59,7 @@ font-family = "CodeNewRoman Nerd Font"
 # font-family = "Product Sans Bold" {} [] "" '' () * - = -> ==
 font-size = 14
 cursor-style-blink = true 
-background-opacity = 0.85
+background-opacity = 0.89
 gtk-titlebar = false
 window-padding-x = 12
 # window-decoration = false
