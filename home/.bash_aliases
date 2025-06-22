@@ -38,6 +38,9 @@ alias glg='git log --all --graph'
 ## neovim
 alias vim='nvim'
 
+## fastfetch
+alias ff='fastfetch --color yellow'
+
 ## jupyter 
 alias jpn='jupyter notebook --no-browser'
 alias jpl='jupyter lab --no-browser'
