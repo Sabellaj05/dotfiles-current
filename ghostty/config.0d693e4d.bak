@@ -63,4 +63,3 @@ background-opacity = 0.89
 gtk-titlebar = false
 window-padding-x = 12
 # window-decoration = false
-keybind = shift+enter=text:\n
