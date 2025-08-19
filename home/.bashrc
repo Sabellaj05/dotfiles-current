@@ -186,6 +186,12 @@ fi
 #
 # alias ztr='zathura_open'
 
+zathura_pdf() {
+  nohup zathura "$1" >/dev/null 2>&1 &
+}
+
+alias ztr='zathura_pdf'
+
 
 unset __conda_setup
 # <<< conda initialize <<<
@@ -202,11 +208,19 @@ export PATH=$HOME/.odin/Odin/:$PATH
 export PATH=$HOME/software/nodejs/bin:$PATH
 # focus IDE
 export PATH=$HOME/software/focus/:$PATH
+# Intellij
+export PATH=$HOME/software/intellij/bin:$PATH
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
+
+# firebird db
+export PATH=$PATH:/opt/firebird/bin
+
 
 complete -C /usr/bin/terraform terraform
 eval "$(starship init bash)"
 eval "$(uv generate-shell-completion bash)"
 eval "$(uvx --generate-shell-completion bash)"
+export PATH="$HOME/.local/bin:$PATH"
+source /opt/vulkan-sdk/latest/setup-env.sh
