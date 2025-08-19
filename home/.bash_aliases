@@ -49,11 +49,6 @@ alias jpl='jupyter lab --no-browser'
 alias cursor='/usr/local/bin/cursor --no-sandbox'
 
 #>>>> OS >>>>
-## Windows C Drive
-alias win-c='cd /media/don/9EEE3C3BEE3C0DD1/Users/manum/'
-
-## Windows D Drive
-alias win-d='cd /media/don/Discardo/'
 
 ## Linux version
 alias linuxv='lsb_release -a'
