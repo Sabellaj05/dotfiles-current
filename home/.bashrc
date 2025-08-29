@@ -224,3 +224,11 @@ eval "$(uv generate-shell-completion bash)"
 eval "$(uvx --generate-shell-completion bash)"
 export PATH="$HOME/.local/bin:$PATH"
 source /opt/vulkan-sdk/latest/setup-env.sh
+
+# pnpm
+export PNPM_HOME="/home/don/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
