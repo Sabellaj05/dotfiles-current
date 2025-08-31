@@ -100,3 +100,17 @@ require("lspconfig").gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
+
+-- =================================================================
+-- ==             JAVA LSP (JDTLS) AUTOCOMMAND                  ==
+-- =================================================================
+-- This command creates an autocommand that will run our custom
+-- jdtls setup function every time you open a file with the .java
+-- filetype. 
+-- =================================================================
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'java',
+    callback = function()
+        require('core.plugin_config.jdtls_config').setup()
+    end
+})
