@@ -53,12 +53,26 @@ local on_attach = function(_, _)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
   vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+  vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, {}) -- Shows diagnostic message in a float
 end
 
 
 require("lspconfig").lua_ls.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        globals = {'vim'},
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+    },
+  },
 }
 require("lspconfig").bashls.setup {
   capabilities = capabilities,
@@ -113,4 +127,21 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function()
         require('core.plugin_config.jdtls_config').setup()
     end
+})
+
+-- =================================================================
+-- ==            SHOW DIAGNOSTICS ON CURSOR HOLD                ==
+-- =================================================================
+-- This command creates an autocommand that shows the diagnostic
+-- (error/warning) message in a floating window when you hover your
+-- cursor over the line.
+-- =================================================================
+vim.api.nvim_create_autocmd('CursorHold', {
+  pattern = '*',
+  callback = function()
+    vim.diagnostic.open_float(nil, {
+      focusable = false,
+      scope = 'line',
+    })
+  end,
 })
