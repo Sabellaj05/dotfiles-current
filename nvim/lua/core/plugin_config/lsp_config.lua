@@ -145,3 +145,26 @@ vim.api.nvim_create_autocmd('CursorHold', {
     })
   end,
 })
+
+-- =================================================================
+-- ==        SET KEYMAPS FOR JDTLS WHEN IT ATTACHES             ==
+-- =================================================================
+-- jdtls doesn't use the standard on_attach function, so we watch for
+-- any LSP attaching and if it's jdtls, we set the keymaps here.
+-- =================================================================
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client and client.name == 'jdtls' then
+      local bufopts = { noremap=true, silent=true, buffer=ev.buf }
+      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+      vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, bufopts)
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+      vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, bufopts)
+    end
+  end,
+})
