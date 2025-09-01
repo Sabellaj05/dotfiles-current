@@ -45,44 +45,32 @@ esac
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# if [ -n "$force_color_prompt" ]; then
+#     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+# 	# We have color support; assume it's compliant with Ecma-48
+# 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+# 	# a case would tend to support setf rather than setaf.)
+# 	color_prompt=yes
+#     else
+# 	color_prompt=
+#     fi
+# fi
+#
+# if [ "$color_prompt" = yes ]; then
+#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# else
+#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+# fi
+# unset color_prompt force_color_prompt
+#
+# # If this is an xterm set the title to user@host:dir
+# case "$TERM" in
+# xterm*|rxvt*)
+#     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#     ;;
+# *)
+#     ;;
+# esac
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -117,11 +105,16 @@ if ! shopt -oq posix; then
 fi
 
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-. "$HOME/.cargo/env"
-source /home/don/software/alacritty/extra/completions/alacritty.bash
+## ====== useful function aliases ====== ##
+
+zathura_pdf() {
+  nohup zathura "$1" >/dev/null 2>&1 &
+}
+
+alias ztr='zathura_pdf'
+
+## ====== useful function aliases ====== ##
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -136,65 +129,9 @@ else
     fi
 fi
 
-
-# >>> Yazi file manager >>>
-
-#function yy() {
-#	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-#	yazi "$@" --cwd-file="$tmp"
-#	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-#		cd -- "$cwd"
-#	fi
-#	rm -f -- "$tmp"
-#}
-
-# >>> Yazi file manager >>>
-
-# >>> obsidian >>>
-#obsidian_open_it() {
-#	local vault_path="IT"
-#	#xdg-open "obsidian://open?vault=$vault_name"
-#    nohup obsidian "obsidian://open?vault=$vault_name" >/dev/null 2>&1 &
-#    disown
-#    exit ## Para cerrar la terminal de toque
-#}
-#
-#obsidian_open_cloud() {
-#	local vault_name="Cloud"
-#	#xdg-open "obsidian://open?vault=$vault_name"
-#    nohup obsidian "obsidian://open?vault=$vault_name" >/dev/null 2>&1 &
-#    disown
-#    exit
-#
-#}
-
-# Aliases to open
-
-# alias ob-it='obsidian_open_it'
-# alias ob-cloud='obsidian_open_cloud'
-
-
-# >>> obsidian >>>
-
-# >>> Zathura >>>
-#
-# 
-# zathurar_open() {
-#   zathura "$1" >/dev/null 2>&1 &
-#   disown
-# }
-#
-# alias ztr='zathura_open'
-
-zathura_pdf() {
-  nohup zathura "$1" >/dev/null 2>&1 &
-}
-
-alias ztr='zathura_pdf'
-
-
 unset __conda_setup
 # <<< conda initialize <<<
+
 
 export PATH=$HOME/local/nvim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
@@ -217,13 +154,18 @@ export PATH=$PATH:/usr/local/go/bin
 # firebird db
 export PATH=$PATH:/opt/firebird/bin
 
-
 complete -C /usr/bin/terraform terraform
 eval "$(starship init bash)"
 eval "$(uv generate-shell-completion bash)"
 eval "$(uvx --generate-shell-completion bash)"
 export PATH="$HOME/.local/bin:$PATH"
 source /opt/vulkan-sdk/latest/setup-env.sh
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+. "$HOME/.cargo/env"
+source /home/don/software/alacritty/extra/completions/alacritty.bash
 
 # pnpm
 export PNPM_HOME="/home/don/.local/share/pnpm"
