@@ -57,9 +57,11 @@ background = #191724
 # font-family = "Roboto Mono Nerd Font"
 font-family = "CodeNewRoman Nerd Font"
 # font-family = "Product Sans Bold" {} [] "" '' () * - = -> ==
+# font-size = 14
 font-size = 14
 cursor-style-blink = true 
-background-opacity = 0.89
+background-opacity = 0.91
+# background-opacity = 0.39
 gtk-titlebar = false
 window-padding-x = 12
 # window-decoration = false
