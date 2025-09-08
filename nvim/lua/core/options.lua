@@ -1,5 +1,6 @@
 
 -- relative numbers :p 
+vim.opt.termguicolors = true         -- enable true color support
 vim.opt.relativenumber = true
 vim.opt.number = true              -- number of line in highlited cursor
 -- vim.opt.hybridlinenumber = true      

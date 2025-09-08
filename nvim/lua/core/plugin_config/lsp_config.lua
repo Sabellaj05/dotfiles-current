@@ -165,6 +165,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, bufopts)
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
       vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, bufopts)
+
+      -- Override the LSP's incorrect semantic token for Java modifiers
+      vim.api.nvim_set_hl(0, '@lsp.type.modifier.java', { link = '@keyword' })
     end
   end,
 })

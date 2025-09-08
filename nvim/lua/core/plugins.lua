@@ -22,6 +22,13 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'voldikss/vim-floaterm'
+  use 'RostislavArts/naysayer.nvim'
+  -- use {
+  --   'RostislavArts/naysayer.nvim',
+  --   config = function()
+  --     vim.cmd.colorscheme('naysayer')
+  --   end
+  -- }
   use {
     'rose-pine/neovim',
     as = 'rose-pine',

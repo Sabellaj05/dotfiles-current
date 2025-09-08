@@ -15,5 +15,3 @@ require("core.options")
 require("core.plugins")
 -- plugin configs
 require("core.plugin_config")
-
-
