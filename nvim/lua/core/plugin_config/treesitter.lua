@@ -15,6 +15,7 @@ local options = {
   highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
+      -- disable = {"java"},
   },
   indent = { enable = true },
 

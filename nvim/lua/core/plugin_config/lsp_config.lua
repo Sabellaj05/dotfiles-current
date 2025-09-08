@@ -157,6 +157,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     if client and client.name == 'jdtls' then
+      -- To disable semantic highlighting for Java, uncomment the following line
+      client.server_capabilities.semanticTokensProvider = nil
+
       local bufopts = { noremap=true, silent=true, buffer=ev.buf }
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
       vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
