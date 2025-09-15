@@ -36,13 +36,57 @@
 # background = #3F1E25
 # background = #282c34
 # rose-pine background color
-background = #191724
+# background = #191724
 
 # catpuccin background color
 # background = #1E1E2E    
 
 # default
 # background = #3F1E25
+
+# green good
+background = #062625
+
+
+# colors
+#   yellow     = "#E6DB74",
+#   orange     = "#FD971F",
+#   red        = "#F92672",
+#   magenta    = "#FD5FF0",
+#   blue       = "#66D9EF",
+#   green      = "#A6E22E",
+#   cyan       = "#A1EFE4",
+#   violet     = "#AE81FF",
+#
+#   background = "#062625",
+#   gutter     = "#062625",
+#   selection  = "#0000ff",
+#   text       = "#d0b892",
+#   comment    = "#53d549",
+#   punctuation= "#8cde94",
+#   keyword    = "#ffffff",
+#   variable   = "#d0b892",
+#   function_  = "#d0b892",
+#   string     = "#3ad0b5",
+#   constant   = "#87ffde",
+#   macro      = "#8cde94",
+#   number     = "#87ffde",
+#   white      = "#ffffff",
+#   error      = "#ff0000",
+#   warning    = "#ffaa00",
+#   highlight  = "#0b3335",
+#   line_fg    = "#126367",
+#   lualine_fg = "#12251b",
+#   lualine_bg = "#d3b58e",
+#
+#   dimmed_keyword = "#b0b0b0",
+#   dimmed_function = "#cccccc",
+#   dimmed_variable = "#a0b8c8",
+#   dimmed_string = "#2fa89e",
+#   dimmed_type = "#79c4a6",
+# }
+
+
 #
 # # Empty values are used to reset config keys to default.
 # key =

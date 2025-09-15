@@ -22,7 +22,35 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'voldikss/vim-floaterm'
-  use 'RostislavArts/naysayer.nvim'
+  use {
+    'RostislavArts/naysayer.nvim',
+    config = function()
+      -- Safely attempt to run the setup function
+      local status_ok, naysayer = pcall(require, "naysayer")
+      if status_ok then
+        naysayer.setup({})
+      end
+
+      vim.cmd.colorscheme('naysayer')
+
+      -- =================================================================
+      -- ==                  CUSTOM THEME OVERRIDES                   ==
+      -- =================================================================
+      -- Your overrides will be applied after the colorscheme is set
+      -- =================================================================
+      local highlights = {
+        -- Normal = { bg = "#0A0E14" },
+        -- Comment = { fg = "#4A5A6A" },
+        -- String = { fg = "#95C48C" },
+        -- Function = { fg = "#9dbdb4"}, nice
+        Function = { fg = "#a6bfb8"},
+      }
+
+      for group, settings in pairs(highlights) do
+        vim.api.nvim_set_hl(0, group, settings)
+      end
+    end
+  }
   -- use {
   --   'RostislavArts/naysayer.nvim',
   --   config = function()
