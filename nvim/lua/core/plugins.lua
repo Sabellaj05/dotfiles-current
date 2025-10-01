@@ -25,12 +25,6 @@ return require('packer').startup(function(use)
   use {
     'RostislavArts/naysayer.nvim',
     config = function()
-      -- Safely attempt to run the setup function
-      local status_ok, naysayer = pcall(require, "naysayer")
-      if status_ok then
-        naysayer.setup({})
-      end
-
       vim.cmd.colorscheme('naysayer')
 
       -- =================================================================

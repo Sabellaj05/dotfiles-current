@@ -115,7 +115,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["naysayer.nvim"] = {
-    config = { "\27LJ\2\n“\2\0\0\r\0\15\0!6\0\0\0006\2\1\0'\3\2\0B\0\3\3\15\0\0\0X\2\3€9\2\3\0014\4\0\0B\2\2\0016\2\4\0009\2\5\0029\2\6\2'\4\2\0B\2\2\0015\2\b\0005\3\a\0=\3\t\0025\3\n\0=\3\v\0026\3\f\0\18\5\2\0B\3\2\4H\6\a€6\b\4\0009\b\r\b9\b\14\b)\n\0\0\18\v\6\0\18\f\a\0B\b\4\1F\6\3\3R\6÷\127K\0\1\0\16nvim_set_hl\bapi\npairs\vOrange\1\0\1\afg\f#dead8c\rFunction\1\0\2\vOrange\0\rFunction\0\1\0\1\afg\f#a6bfb8\16colorscheme\bcmd\bvim\nsetup\rnaysayer\frequire\npcall\0" },
+    config = { "\27LJ\2\n¶\1\0\0\v\0\n\0\0226\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\0015\0\5\0005\1\4\0=\1\6\0006\1\a\0\18\3\0\0B\1\2\4H\4\a€6\6\0\0009\6\b\0069\6\t\6)\b\0\0\18\t\4\0\18\n\5\0B\6\4\1F\4\3\3R\4÷\127K\0\1\0\16nvim_set_hl\bapi\npairs\rFunction\1\0\1\rFunction\0\1\0\1\afg\f#a6bfb8\rnaysayer\16colorscheme\bcmd\bvim\0" },
     loaded = true,
     path = "/home/don/.local/share/nvim/site/pack/packer/start/naysayer.nvim",
     url = "https://github.com/RostislavArts/naysayer.nvim"
@@ -195,7 +195,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: naysayer.nvim
 time([[Config for naysayer.nvim]], true)
-try_loadstring("\27LJ\2\n“\2\0\0\r\0\15\0!6\0\0\0006\2\1\0'\3\2\0B\0\3\3\15\0\0\0X\2\3€9\2\3\0014\4\0\0B\2\2\0016\2\4\0009\2\5\0029\2\6\2'\4\2\0B\2\2\0015\2\b\0005\3\a\0=\3\t\0025\3\n\0=\3\v\0026\3\f\0\18\5\2\0B\3\2\4H\6\a€6\b\4\0009\b\r\b9\b\14\b)\n\0\0\18\v\6\0\18\f\a\0B\b\4\1F\6\3\3R\6÷\127K\0\1\0\16nvim_set_hl\bapi\npairs\vOrange\1\0\1\afg\f#dead8c\rFunction\1\0\2\vOrange\0\rFunction\0\1\0\1\afg\f#a6bfb8\16colorscheme\bcmd\bvim\nsetup\rnaysayer\frequire\npcall\0", "config", "naysayer.nvim")
+try_loadstring("\27LJ\2\n¶\1\0\0\v\0\n\0\0226\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\0015\0\5\0005\1\4\0=\1\6\0006\1\a\0\18\3\0\0B\1\2\4H\4\a€6\6\0\0009\6\b\0069\6\t\6)\b\0\0\18\t\4\0\18\n\5\0B\6\4\1F\4\3\3R\4÷\127K\0\1\0\16nvim_set_hl\bapi\npairs\rFunction\1\0\1\rFunction\0\1\0\1\afg\f#a6bfb8\rnaysayer\16colorscheme\bcmd\bvim\0", "config", "naysayer.nvim")
 time([[Config for naysayer.nvim]], false)
 
 _G._packer.inside_compile = false
