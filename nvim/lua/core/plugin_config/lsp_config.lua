@@ -57,7 +57,7 @@ local on_attach = function(_, _)
 end
 
 
-require("lspconfig").lua_ls.setup {
+vim.lsp.config('lua_ls', {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -73,47 +73,52 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
-}
-require("lspconfig").bashls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-require("lspconfig").clangd.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-require("lspconfig").pyright.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
+})
 
-require("lspconfig").yamlls.setup {
+vim.lsp.config('bashls', {
   capabilities = capabilities,
-  on_attach = on_attach
-}
+  on_attach = on_attach,
+})
 
-require("lspconfig").dockerls.setup {
+vim.lsp.config('clangd', {
   capabilities = capabilities,
-  on_attach = on_attach
-}
+  on_attach = on_attach,
+})
 
-require("lspconfig").rust_analyzer.setup {
+vim.lsp.config('pyright', {
   capabilities = capabilities,
-  on_attach = on_attach
-}
+  on_attach = on_attach,
+})
 
-require("lspconfig").ols.setup {
+vim.lsp.config('yamlls', {
   capabilities = capabilities,
-  on_attach = on_attach
-}
-require("lspconfig").terraformls.setup {
+  on_attach = on_attach,
+})
+
+vim.lsp.config('dockerls', {
   capabilities = capabilities,
-  on_attach = on_attach
-}
-require("lspconfig").gopls.setup {
+  on_attach = on_attach,
+})
+
+vim.lsp.config('rust_analyzer', {
   capabilities = capabilities,
-  on_attach = on_attach
-}
+  on_attach = on_attach,
+})
+
+vim.lsp.config('ols', {
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+vim.lsp.config('terraformls', {
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+vim.lsp.config('gopls', {
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- =================================================================
 -- ==             JAVA LSP (JDTLS) AUTOCOMMAND                  ==
